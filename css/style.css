@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+    --sb-track-color: #000000;
+    --sb-thumb-color: #b10000;
+    --sb-size: 10px;
+}
+
+body::-webkit-scrollbar {
+    width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+body {
+    scrollbar-color: var(--sb-thumb-color)
+                        var(--sb-track-color);}
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #cc0101;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #e90101;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+footer {
+    background-color: #1d1d1d98;
+    font-size: 0.9em;
+    margin-top: 0;
+    padding: 20px 40px;
+    width: 100%;
+    position: relative;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+}
+
+hr {
+	background: #1d1d1da6;
+	width: 100%;
+	height: 5px;
+	border: #000000;
+	margin: 0px 0;
+	border-radius: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block; /* 👈 Esto hace que la animación funcione */
+}
+
+a:visited {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #ff0000;
+    transform: rotate(-3deg) translateX(-5px);
+}
+
+img, video {
+    -webkit-user-drag: none;
+}
+
+.redes {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+.redes a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #00000000;
+    border-radius: 50%;
+    width: 2rem;
+    height: 1rem;
+}
+
+.redes img {
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: invert(100%) sepia(20%) saturate(300%) hue-rotate(170deg);
+    transition: all 0.3s ease;
+}
+
+.redes img:hover {
+    transform: scale(1.3) rotate(10deg);
+    filter: invert(19%) sepia(99%) saturate(7486%) hue-rotate(2deg) brightness(102%) contrast(112%);
+}
+
+.rules {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+    gap: 8px;
+    font-size: 15px;
+}
+
+.rules p {
+    color: #ffffff;
+    margin: 0;
+}
+
+.rules a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.rules a:hover {
+    color: #ff0000;
+    transform: rotate(-3deg) translateX(-5px); /* 👈 efecto caerse */
+}
+
+.cristalpvp {
+    margin: 0;
+}
+
+.cristal {
+    text-align: left;
+    font-size: 25px;
+    margin: 0;
+}
+
+.contain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.contain figure {
+    position: relative;
+    height: 250px;
+    width: 450px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.contain figure img {
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-out;
+    margin: 0;
+}
+
+.contain figure video {
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-out;
+    margin: 0;
+}
+
+.contain figure .capa {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000af;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+}
+
+.contain figure:hover > .capa {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contain figure:hover > .capa h3 {
+    margin-top: 70px;
+    margin-bottom: 15px;
+}
+
+.contain figure:hover > img {
+    transform: scale(1.3);
+}
+
+.contain figure:hover > video {
+    transform: scale(1.3);
+}
+
+.contain figure .capa h3 {
+    color: #ffffff;
+    font-weight: 400;
+    margin-bottom: 120px;
+    transition: all 500ms ease-out;
+    margin-top: 30px;
+}
+
+.contain figure .capa p {
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 220px;
+    margin: auto;
+}
+
+.animation {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animation__container {
+    width: 700px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+.item {
+    background-color: #b10000;
+    padding: 3rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item span {
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.item .pulse {
+    animation-name: pulse;
+}
+
+.item .bounce {
+    animation-name: bounce;
+}
+
+#title {
+    text-align: center;
+    font-size: 75px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-top: 30px;
+}
+
+#sub-sub-title{
+    text-align: center;
+    font-size: 30;
+}
+
+#particles-js{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+#footer-name{
+    font-size: 25px;
+}
+
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-20px);}
+    60% {transform: translateY(-15px);}
+}
+
