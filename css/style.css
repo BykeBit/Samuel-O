@@ -149,6 +149,7 @@ img, video {
     transform: translateX(-10px);
     pointer-events: none;
     transition: all 0.3s ease;
+    border: 1px solid #ffffff;
 }
 
 .sidebar ul li::before {
@@ -156,7 +157,7 @@ img, video {
     position: absolute;
     left: 60px;
     border: 6px solid transparent;
-    border-right-color: #333;
+    border-right-color: #ffffff;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
