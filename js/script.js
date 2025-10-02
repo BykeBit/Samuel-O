@@ -26,14 +26,6 @@ document.addEventListener("keydown", function(e) {
     if (e.ctrlKey && e.key.toLowerCase() === "s") {
         e.preventDefault();
     }
-    // Ctrl + P (imprimir)
-    if (e.ctrlKey && e.key.toLowerCase() === "p") {
-        e.preventDefault();
-    }
-    // Ctrl + C (copiar)
-    if (e.ctrlKey && e.key.toLowerCase() === "c") {
-        e.preventDefault();
-    }
 });
 
 
@@ -99,3 +91,4 @@ document.addEventListener("keydown", function(e) {
         e.preventDefault();
     }
 });
+
